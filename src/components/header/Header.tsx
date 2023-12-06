@@ -1,16 +1,16 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, scroll } from "framer-motion";
 
-function Header({ children }: { children: JSX.Element }) {
+function Header() {
   type WeatherData = {
     current: {
       temperature_2m: String;
     };
   };
 
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weather, setWeather] = useState<WeatherData>(null!);
 
   useEffect(() => {
     fetch(
