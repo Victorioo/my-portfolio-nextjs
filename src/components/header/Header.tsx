@@ -86,18 +86,13 @@ function Header() {
         else setDirection(false);
       });
     }
-
-    // const [direction, setDirection] = useState(false);
-
-    // scroll((progress) => {
-    //   if (progress > 0) setDirection(true);
-    //   else setDirection(false);
-    // });
   }, []);
 
+  const [menu, setMenu] = useState(false);
+  console.log(menu);
   return (
     <motion.header
-      className="flex justify-between items-center h-24 px-14 fixed w-full z-40"
+      className="flex justify-between items-center h-24 px-14 fixed w-full z-40 sm:w-[90%]"
       style={{ padding: direction ? "0 5.5rem" : "0 2.5rem" }}
       animate={{
         backdropFilter: direction ? "blur(10px)" : "0",
@@ -113,7 +108,7 @@ function Header() {
           className={`text-sm uppercase flex items-start gap-14`}
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
-          <li className="flex items-center gap-2">
+          <li className="flex items-center gap-2 md:hidden">
             <span>{`${currentWeather}°C`}</span>
             <Image
               src={"/cloudy.png"}
@@ -124,7 +119,7 @@ function Header() {
             ></Image>
             <span className="font-bold">Argentina {argentinaDate}</span>
           </li>
-          <li className="flex items-center justify-center gap-1">
+          <li className="flex items-center justify-center gap-1 md:hidden">
             <div className="bg-green-300 h-2 w-2 rounded-full"></div>
             <span className="uppercase">
               Available{" "}
@@ -133,11 +128,24 @@ function Header() {
               </b>
             </span>
           </li>
-          <li>
+          <li className="md:hidden">
             <a href="#" className="underline underline-offset-4">
               victoriocaccioppoli@gmail.com
             </a>
           </li>
+          <motion.button
+            className="text-white relative"
+            onClick={() => setMenu(!menu)}
+          >
+            <motion.span
+              className="absolute h-[2px] w-[40px] bg-white first-letter:top-1/2 left-1/3"
+              animate={{ rotate: menu ? 45 : 0 }}
+            ></motion.span>
+            <motion.span
+              className="absolute h-[2px] w-[40px] bg-white ease-in-out top-1/2 left-1/3"
+              animate={{ rotate: menu ? 135 : 0, top: menu ? 0 : 10}}
+            ></motion.span>
+          </motion.button>
         </motion.ul>
       </nav>
     </motion.header>
