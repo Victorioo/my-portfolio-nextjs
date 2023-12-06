@@ -89,41 +89,35 @@ function Header() {
   }, []);
 
   const [menu, setMenu] = useState(false);
+
   return (
     <>
+      <motion.div
+        className="fixed bg-slate-800 z-40 rounded-full"
+        animate={{
+          width: menu ? "180vw" : "0px",
+          height: menu ? "160vh" : "0px",
+        }}
+      >
+        <motion.div
+          className="flex flex-col w-screen h-screen items-center justify-center text-6xl gap-14 font-semibold z-40"
+          animate={{ display: menu ? "flex" : "none", opacity: menu ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Works</a>
+          <a href="#">Contact</a>
+        </motion.div>
+      </motion.div>
       <motion.header
         className="flex justify-between items-center h-24 px-14 fixed w-full z-40"
         style={{ padding: direction ? "0 3.5rem" : "0 2.5rem" }}
         animate={{
-          backdropFilter: direction ? "blur(4px)" : "0",
+          backdropFilter: direction ? "blur(10px)" : "0",
         }}
         transition={{ duration: 1 }}
       >
-        <motion.div
-          className="fixed bg-slate-800 top-0 left-0 bottom-0 right-0 z-40 flex items-center justify-center rounded-tl-full"
-          animate={{
-            width: menu ? "140vw" : "0px",
-            height: menu ? "200vh" : "0px",
-            opacity: menu ? 1 : 0
-          }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="flex items-center justify-center fixed h-screen w-screen top-0 left-0">
-            <ul className="flex flex-col gap-14">
-              <li>
-                <a href="#" className="text-4xl font-bold uppercase text-gray-400">Home </a></li>
-              <li>
-                <a href="#" className="text-4xl font-bold uppercase text-gray-400">About </a>
-              </li>
-              <li>
-                <a href="#" className="text-4xl font-bold uppercase text-gray-400">Work </a>
-              </li>
-              <li>
-                <a href="#" className="text-4xl font-bold uppercase text-gray-400">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
         <motion.h1
           layout
           transition={{ duration: 0.9, ease: "easeOut" }}
@@ -162,19 +156,24 @@ function Header() {
                 victoriocaccioppoli@gmail.com
               </a>
             </li>
-            <motion.label
-              className="hamburger hidden sm:block z-[999]"
-              onClick={() => setMenu(!menu)}
-            >
-              <input type="checkbox" />
-              <svg viewBox="0 0 32 32">
-                <path
-                  className="line line-top-bottom"
-                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-                ></path>
-                <path className="line" d="M7 16 27 16"></path>
-              </svg>
-            </motion.label>
+            <div onClick={() => setMenu(!menu)}>
+              <button className="hamburger hidden sm:block z-[99]">
+                <input type="button" />
+                <svg
+                  viewBox="0 0 32 32"
+                  style={{ transform: menu ? "rotate(-45deg)" : "" }}
+                  // transform={menu ? -45 : 0}
+                >
+                  <path
+                    className="line line-top-bottom"
+                    strokeDasharray={menu ? "20 300" : "12 63"}
+                    strokeDashoffset={menu ? "-32.42" : ""}
+                    d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                  ></path>
+                  <path className="line" d="M7 16 27 16"></path>
+                </svg>
+              </button>
+            </div>
           </motion.ul>
         </nav>
       </motion.header>
