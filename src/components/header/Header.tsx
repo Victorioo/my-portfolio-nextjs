@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, scroll } from "framer-motion";
@@ -79,11 +79,21 @@ function Header() {
   const argentinaDate = formatDate(date);
 
   const [direction, setDirection] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      scroll((progress) => {
+        if (progress > 0) setDirection(true);
+        else setDirection(false);
+      });
+    }
 
-  scroll((progress) => {
-    if (progress > 0) setDirection(true);
-    else setDirection(false);
-  });
+    // const [direction, setDirection] = useState(false);
+
+    // scroll((progress) => {
+    //   if (progress > 0) setDirection(true);
+    //   else setDirection(false);
+    // });
+  }, []);
 
   return (
     <motion.header

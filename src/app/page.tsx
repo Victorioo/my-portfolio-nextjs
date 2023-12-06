@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <main className="relative bg-slate-900 z-10">
         {/* ------------------ HERO ----------------------- */}
-        {/* <Header></Header> */}
+        <Header></Header>
         {/* <Image
           src="/profile-pic.png"
           alt="yo"
