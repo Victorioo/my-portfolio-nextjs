@@ -1,9 +1,8 @@
-import Image from "next/image";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Marquee from "./components/hero/Marquee";
-import About from "./components/about/about";
-import Work from "./components/work/work";
+import Header from "../components/header/Header";
+import Hero from "../components/hero/Hero";
+import Marquee from "../components/hero/Marquee";
+import About from "../components/about/about";
+import Work from "../components/work/work";
 export default function Home() {
   return (
     <>
@@ -53,9 +52,7 @@ export default function Home() {
             </p>
           </div>
         </About>
-        <Work>
-
-        </Work>
+        <Work/>
       </main>
     </>
   );
