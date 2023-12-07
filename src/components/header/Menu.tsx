@@ -1,50 +1,42 @@
-"use client";
-import { motion } from "framer-motion";
-
 import React from "react";
-
-function Menu() {
+import { motion } from "framer-motion";
+function Menu({
+  menu,
+  month,
+  // children,
+}: {
+  menu: boolean;
+  month: string;
+  // children: JSX.Element;
+}) {
   return (
     <motion.div
-      className="fixed bg-slate-800 top-0 left-0 bottom-0 right-0 z-40 flex items-center justify-center rounded-full w-[140vw] h-[200vh]"
-      // animate={{
-      //   width: menu ? "140vw" : "0px",
-      //   height: menu ? "200vh" : "0px",
-      // }}
-      transition={{ duration: 0.8 }}
+      className="flex flex-col w-screen h-screen items-center justify-around gap-14 z-40"
+      animate={{ display: menu ? "flex" : "none", opacity: menu ? 1 : 0 }}
+      transition={{ duration: 0.7 }}
     >
-    </motion.div>
-  );
-}
-
-export function MenuLinks() {
-  return (
-    <>
-      <div className="flex items-center justify-center fixed h-screen w-screen top-0 left-0">
-        <ul className="flex flex-col gap-14">
-          <li>
-            <a href="#" className="text-4xl font-bold uppercase text-gray-400">
-              Home{" "}
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-4xl font-bold uppercase text-gray-400">
-              About{" "}
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-4xl font-bold uppercase text-gray-400">
-              Work{" "}
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-4xl font-bold uppercase text-gray-400">
-              Contact
-            </a>
-          </li>
-        </ul>
+      <ul className="flex flex-col gap-14 text-4xl font-semibold ">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Works</a>
+        <a href="#">Contact</a>
+      </ul>
+      <div className="flex flex-col gap-4 list-none items-center">
+        <li className="flex items-center justify-center gap-1">
+          <div className="bg-green-300 h-2 w-2 rounded-full"></div>
+          <span className="">
+            Available to work on <b className="font-bold">{month}</b>
+          </span>
+        </li>
+        <a
+          href="mailto:victoriocaccioppoli@gmail.com"
+          className="underline underline-offset-4"
+        >
+          victoriocaccioppoli@gmail.com
+        </a>
+        {/* {children} */}
       </div>
-    </>
+    </motion.div>
   );
 }
 

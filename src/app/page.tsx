@@ -7,20 +7,13 @@ export default function Home() {
   return (
     <>
       <main className="relative bg-slate-900 z-10">
-        {/* ------------------ HERO ----------------------- */}
         <Header></Header>
-        {/* <Image
-          src="/profile-pic.png"
-          alt="yo"
-          width={500}
-          height={500}
-          className="absolute right-0 bottom-0 w-4/12 opacity-60 object-cover"
-        ></Image> */}
+        {/* ------------------ HERO ----------------------- */}
         <section className="flex flex-col items-center justify-center h-screen">
           <Hero>
             <p></p>
           </Hero>
-          <Marquee></Marquee>
+          <Marquee/>
         </section>
         {/* ------------------ HERO ----------------------- */}
       </main>
@@ -50,7 +43,7 @@ export default function Home() {
             </p>
           </div>
         </About>
-        <Work/>
+        <Work />
       </main>
     </>
   );

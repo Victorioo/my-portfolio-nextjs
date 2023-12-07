@@ -1,5 +1,6 @@
 import React from "react";
-
+import { LuExternalLink, LuGithub } from "react-icons/lu";
+// import { LuGithub } from "react-icons/lu";
 function Project({
   name,
   children,
@@ -8,35 +9,41 @@ function Project({
   page,
 }: {
   name: string;
-  children: string;
+  children: JSX.Element;
   image: string;
   gitHub?: string;
   page?: string;
 }) {
   return (
     <>
-      <div className="bg-gradient-to-br from-gray-800 to-slate-950 flex flex-col items-center gap-2 rounded-xl shadow-xl shadow-[rgba(0,0,0,0.4)] px-4 py-8">
-        <h1 className="font-semibold text-xl">{name}</h1>
-        <p className="text-md text-gray-400 max-w-lg mx-auto leading-8">
-          {children}
-        </p>
-        <div className="flex gap-7">
+      <div
+        className={` bg-gradient-to-tr from-slate-700 to-slate-900 flex flex-col items-stretch justify-center gap-4 rounded-xl shadow-xl shadow-[rgba(0,0,0,0.4)] p-4`}
+      >
+        {children}
+        <div className="flex gap-7 items-center justify-center font-semibold">
           {gitHub ? (
-            <button className="bg-black px-4 py-1 rounded-full">
-              <a href={gitHub}>GitHub</a>
-            </button>
+            <a
+              className="bg-black px-4 py-2 rounded-md text-white flex items-center gap-2 hover:rounded-lg transition-all"
+              href={gitHub}
+              target="_blank"
+            >
+              GitHub <LuGithub />
+            </a>
           ) : (
             ""
           )}
           {page ? (
-            <button className="bg-gray-800 px-4 py-1 rounded-full">
-              <a href={page}>Web</a>
-            </button>
+            <a
+              className="bg-blue-600 px-4 py-2 rounded-md flex items-center gap-2"
+              href={page}
+              target="_blank"
+            >
+              See Code <LuExternalLink />
+            </a>
           ) : (
             ""
           )}
         </div>
-        <img src={image} className="block w-full h-auto rounded-2xl" />
       </div>
     </>
   );

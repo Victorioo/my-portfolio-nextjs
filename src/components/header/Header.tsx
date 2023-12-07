@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, scroll } from "framer-motion";
-
+import BurgerButton from "./BurgerButton";
+import Menu from "./Menu";
 function Header() {
   type WeatherData = {
     current: {
@@ -81,10 +82,13 @@ function Header() {
   const [direction, setDirection] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      scroll((progress) => {
-        if (progress > 0) setDirection(true);
-        else setDirection(false);
-      });
+      if (window.innerHeight > 767) {
+        console.log(window.innerHeight)
+        scroll((progress) => {
+          if (progress > 0) setDirection(true);
+          else setDirection(false);
+        });
+      }
     }
   }, []);
 
@@ -93,22 +97,13 @@ function Header() {
   return (
     <>
       <motion.div
-        className="fixed bg-slate-800 z-40 rounded-full"
+        className="fixed bg-slate-800 z-40 rounded-full hidden md:block"
         animate={{
-          width: menu ? "180vw" : "0px",
-          height: menu ? "160vh" : "0px",
+          width: menu ? "140vw" : "0px",
+          height: menu ? "180vh" : "0px",
         }}
       >
-        <motion.div
-          className="flex flex-col w-screen h-screen items-center justify-center text-6xl gap-14 font-semibold z-40"
-          animate={{ display: menu ? "flex" : "none", opacity: menu ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Works</a>
-          <a href="#">Contact</a>
-        </motion.div>
+        <Menu menu={menu} month={`${month()} ${year}`}></Menu>
       </motion.div>
       <motion.header
         className="flex justify-between items-center h-24 px-14 fixed w-full z-40"
@@ -121,7 +116,7 @@ function Header() {
         <motion.h1
           layout
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="lg:hidden sm:block"
+          className="lg:hidden md:block"
         >
           Victorio
         </motion.h1>
@@ -156,24 +151,10 @@ function Header() {
                 victoriocaccioppoli@gmail.com
               </a>
             </li>
-            <div onClick={() => setMenu(!menu)}>
-              <button className="hamburger hidden sm:block z-[99]">
-                <input type="button" />
-                <svg
-                  viewBox="0 0 32 32"
-                  style={{ transform: menu ? "rotate(-45deg)" : "" }}
-                  // transform={menu ? -45 : 0}
-                >
-                  <path
-                    className="line line-top-bottom"
-                    strokeDasharray={menu ? "20 300" : "12 63"}
-                    strokeDashoffset={menu ? "-32.42" : ""}
-                    d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-                  ></path>
-                  <path className="line" d="M7 16 27 16"></path>
-                </svg>
-              </button>
-            </div>
+            <BurgerButton
+              menu={menu}
+              changeMenu={() => setMenu(!menu)}
+            ></BurgerButton>
           </motion.ul>
         </nav>
       </motion.header>
