@@ -16,10 +16,10 @@ function Menu({
       transition={{ duration: 0.7 }}
     >
       <ul className="flex flex-col gap-14 text-4xl font-semibold ">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Works</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#works">Works</a>
+        <a href="#contact">Contact</a>
       </ul>
       <div className="flex flex-col gap-4 list-none items-center">
         <li className="flex items-center justify-center gap-1">

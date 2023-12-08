@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 function Footer({ children }: { children?: JSX.Element }) {
   return (
     <footer className="bg-gradient-to-t from-black to-zinc-950 w-screen flex justify-around items-start py-14 md:flex-col md:gap-5 md:items-center px-6">

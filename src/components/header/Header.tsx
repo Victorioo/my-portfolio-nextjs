@@ -83,7 +83,6 @@ function Header() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (window.innerHeight > 767) {
-        console.log(window.innerHeight)
         scroll((progress) => {
           if (progress > 0) setDirection(true);
           else setDirection(false);

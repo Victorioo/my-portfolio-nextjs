@@ -6,9 +6,7 @@ export default function About({ children }: { children: JSX.Element }) {
   const isInView = useInView(ref, {
     amount: 0.5,
   });
-  useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
+  
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full relative py-[15%]">

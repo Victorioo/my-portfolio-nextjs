@@ -3,7 +3,7 @@ import Gradient from "./Gradient";
 function Contact() {
   return (
     <>
-      <section className="relative bg-zinc-950 w-screen flex items-center justify-center md:flex-col p-4 py-8 overflow-hidden">
+      <section className="relative bg-zinc-950 w-screen flex items-center justify-center md:flex-col p-4 py-8 overflow-hidden" id="contact">
         <div className=" flex flex-col items-center justify-center gap-3 p-8 rounded-2xl">
           <h1 className="text-5xl md:text-4xl text-transparent bg-clip-text font-black bg-gradient-to-tr from-purple-300 to-indigo-500">
             <span className="text-white">#</span>LetsWorkTogether

@@ -14,7 +14,7 @@ const IterateStack = (stack?: string[]) => {
 const Work = () => {
   return (
     <>
-      <div className="md:w-5/6 w-4/5 mx-auto flex flex-col items-start justify-center gap-3">
+      <div className="md:w-5/6 w-4/5 mx-auto flex flex-col items-start justify-center gap-3" id="works">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold flex items-center">
           ✨ Projects
         </span>
