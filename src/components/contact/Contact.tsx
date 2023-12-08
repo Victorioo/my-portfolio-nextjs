@@ -59,6 +59,15 @@ function Contact() {
               Send
             </button>
           </form>
+          <div className="flex gap-8 list-none underline underline-offset-4">
+            <a href="https://www.linkedin.com/in/victoriocaccioppoli/" target="_blank">
+              Linkedin
+            </a>
+            <a href="https://www.instagram.com/vicctorioo/" target="_blank">
+              Instagram
+            </a>
+            <a href="mailto:victoriocaccioppoli@gmail.com">Email</a>
+          </div>
           <Gradient />
         </div>
       </section>
