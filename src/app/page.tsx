@@ -3,6 +3,7 @@ import Hero from "../components/hero/Hero";
 import Marquee from "../components/hero/Marquee";
 import About from "../components/about/about";
 import Work from "../components/work/work";
+import Contact from "@/components/contact/Contact";
 export default function Home() {
   return (
     <>
@@ -17,7 +18,7 @@ export default function Home() {
         </section>
         {/* ------------------ HERO ----------------------- */}
       </main>
-      <main className="flex flex-col bg-slate-900 py-14 items-start justify-center">
+      <main className="flex flex-col bg-slate-900 pt-14 items-start justify-center">
         <About>
           <div className="flex flex-col my-4 gap-8 w-3/4 items-center justify-center max-w-[70ch] font-medium">
             <p className="text-md leading-10">
@@ -44,6 +45,9 @@ export default function Home() {
           </div>
         </About>
         <Work />
+        <Contact>
+
+        </Contact>
       </main>
     </>
   );

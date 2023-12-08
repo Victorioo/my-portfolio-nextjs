@@ -29,7 +29,11 @@ function Hero({ children }: { children: JSX.Element }) {
           repeatDelay: 4,
         }}
       ></motion.div>
-      <motion.h1 className="text-8xl max-w-[10ch] py-5 px-0 font-semibold text-gray-300 tracking-tight sm:text-5xl">
+      <motion.h1
+        className="text-8xl max-w-[10ch] py-5 px-0 font-semibold text-gray-300 tracking-tight sm:text-5xl"
+        animate={{ opacity: [0, 1] }}
+        transition={{ duration: 2 }}
+      >
         FRONTEND DEVELOPER
       </motion.h1>
       <div className="sm:items-start lg:gap-4 lg:flex-col lg:items-start flex items-end justify-between w-full">
@@ -40,7 +44,11 @@ function Hero({ children }: { children: JSX.Element }) {
           </motion.a>
           , based on Córdoba Argentina.
         </motion.p>
-        <motion.h1 className="lg:text-start lg:max-w-none lg:text-3xl text-7xl font-bold max-w-[10ch] text-end text-gray-300 tracking-tight z-30">
+        <motion.h1
+          className="lg:text-start lg:max-w-none lg:text-3xl text-7xl font-bold max-w-[10ch] text-end text-gray-300 tracking-tight z-30"
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 2, delay: 0.3 }}
+        >
           VICTORIO CACCIOPPOLI
         </motion.h1>
       </div>

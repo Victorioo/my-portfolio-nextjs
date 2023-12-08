@@ -17,13 +17,13 @@ function Project({
   return (
     <>
       <div
-        className={` bg-gradient-to-tr from-slate-700 to-slate-900 flex flex-col items-stretch justify-center gap-4 rounded-xl shadow-xl shadow-[rgba(0,0,0,0.4)] p-4`}
+        className={`bg-gradient-to-tr from-slate-700 to-slate-800 flex flex-col items-stretch justify-center gap-4 rounded-xl shadow-xl shadow-[rgba(0,0,0,0.4)] p-4`}
       >
         {children}
         <div className="flex gap-7 items-center justify-center font-semibold">
           {gitHub ? (
             <a
-              className="bg-black px-4 py-2 rounded-md text-white flex items-center gap-2 hover:rounded-lg transition-all"
+              className="bg-black px-4 py-2 rounded-md text-white flex items-center gap-2 hover:rounded-xl transition-all hover:text-gray-300"
               href={gitHub}
               target="_blank"
             >
@@ -34,11 +34,11 @@ function Project({
           )}
           {page ? (
             <a
-              className="bg-blue-600 px-4 py-2 rounded-md flex items-center gap-2"
+              className="bg-blue-500 px-4 py-2 rounded-md flex items-center gap-2 hover:rounded-xl transition-all hover:text-gray-300"
               href={page}
               target="_blank"
             >
-              See Code <LuExternalLink />
+              See Web <LuExternalLink />
             </a>
           ) : (
             ""

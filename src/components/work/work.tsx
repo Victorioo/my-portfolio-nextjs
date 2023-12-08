@@ -24,7 +24,7 @@ const Work = () => {
           line written is a step towards learn
         </p>
       </div>
-      <article className="sm:grid-cols-1 lg:grid-cols-2 grid grid-cols-3 mx-auto items-stretch max-w-[80%] gap-4 my-8">
+      <article className="sm:grid-cols-1 lg:grid-cols-2 grid grid-cols-3 mx-auto items-stretch max-w-[80%] gap-4 gap-y-8 my-8">
         {data.map((data, key) => {
           const { name, gitHub, page, image, description, stack } = data;
           return (

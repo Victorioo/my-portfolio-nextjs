@@ -47,7 +47,7 @@ function Chip({ text }: { text: string }) {
   //   default:
   //     break;
   // }
-  return <div className="px-2 rounded-full bg-gray-400 text-black">{text}</div>;
+  return <div className="text-md px-2 rounded-full bg-gray-400 text-black select-none">{text}</div>;
 }
 
 export default Chip;

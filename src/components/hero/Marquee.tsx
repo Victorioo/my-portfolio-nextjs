@@ -8,15 +8,20 @@ function Marquee() {
     <div className="flex justify-center align-center relative w-screen max-w-full h-[50px]">
       <motion.span
         className={`absolute whitespace-nowrap will-change-transform mx-24 text-sm flex items-center gap-4`}
-        animate={{ x: [0, -450] }}
+        animate={{ x: [0, -450], opacity: [0, 1] }}
         transition={{
           duration: 45,
           ease: "easeInOut",
           repeat: Infinity,
+          opacity: {
+            duration: 2,
+            delay: 0.1,
+            repeat: false,
+          },
         }}
       >
         /WEB DEVELOPER/CREATIVE ENGINEER/FRONTEND DEVELOPER/SETUP LOVER{" "}
-          <Stars></Stars>
+        <Stars></Stars>
         /WEB DEVELOPER/CREATIVE ENGINEER/FRONTEND DEVELOPER/SETUP LOVER{" "}
         <Stars></Stars>
         /WEB DEVELOPER/CREATIVE ENGINEER/FRONTEND DEVELOPER/SETUP LOVER{" "}

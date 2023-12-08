@@ -15,7 +15,7 @@ export const data = [
     image: "/elias.png",
     description:
       "Discover a world of creativity and innovation in Elias Techeira's Portfolio, crafted with Next.js and TailwindCSS.",
-    stack: ["Next.js", "TailwindCSS", "lolaso"],
+    stack: ["Next.js", "TailwindCSS", "Three.js"],
   },
   {
     name: "Tic Tac Toe - GLobbys",

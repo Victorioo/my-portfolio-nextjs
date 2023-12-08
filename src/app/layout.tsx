@@ -6,7 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfolio Victorio | Frontend Developer",
-  description: "This is the portfolio of a Junior Developer, Victorio Caccioppoli.",
+  description:
+    "This is the portfolio of a Junior Developer, Victorio Caccioppoli.",
+    icons: {
+      icon: './../../public/logo.png'
+    }
 };
 
 export default function RootLayout({
@@ -16,9 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

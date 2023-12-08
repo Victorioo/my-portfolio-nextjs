@@ -5,7 +5,7 @@ function Gradient({ variant, classes }: { variant: string; classes?: string }) {
   if (variant === "linear") {
     return (
       <motion.div
-        className={`fixed rounded-full blur-3xl z-10 ${classes} h-52`}
+        className={`rounded-full blur-3xl z-10 ${classes} h-52`}
         animate={{
           opacity: [0, 0.3, 0],
           backgroundColor: ["#681a8aff", "rgba(240,0,72,0.15)", "#fc657eff"],
@@ -18,7 +18,7 @@ function Gradient({ variant, classes }: { variant: string; classes?: string }) {
   if (variant === "radial")
     return (
       <motion.div
-        className={`fixed rounded-full blur-2xl ${classes}`}
+        className={`rounded-full blur-2xl ${classes}`}
       ></motion.div>
     );
 }

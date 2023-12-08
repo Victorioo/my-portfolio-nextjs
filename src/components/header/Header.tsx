@@ -147,7 +147,7 @@ function Header() {
               </span>
             </li>
             <li className="md:hidden">
-              <a href="#" className="underline underline-offset-4">
+              <a href="mailto:victoriocaccioppoli@gmail.com" className="underline underline-offset-4 lowercase">
                 victoriocaccioppoli@gmail.com
               </a>
             </li>
