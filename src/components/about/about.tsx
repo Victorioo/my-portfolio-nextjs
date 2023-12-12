@@ -26,25 +26,36 @@ export default function About({ children }: { children: JSX.Element }) {
     return data;
   }
 
-  const pullGitHubAPI = async () => await gitHubAPI(process.env.NEXT_PUBLIC_GITHUB_TOKEN, "Victorioo");
- 
-  const getContributions = pullGitHubAPI().then((response) => {
-    const contributionsData =
-      response.data.viewer.contributionsCollection.contributionCalendar
-        .totalContributions;
+  const [contributions, setContributions] = useState(null);
 
-    setContributions(contributionsData);
-  });
+  const pullGitHubAPI = async () =>
+    await gitHubAPI(process.env.NEXT_PUBLIC_GITHUB_TOKEN, "Victorioo");
 
-  getContributions;
+  const getContributions = pullGitHubAPI()
+    .then((response) => {
+      console.log(response)
+      const contributionsData =
+        response.data.viewer.contributionsCollection.contributionCalendar
+          .totalContributions;
 
-  const [contributions, setContributions] = useState();
+      setContributions(contributionsData);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+
+  useEffect(() => {
+    getContributions;
+  }, [getContributions]);
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-full relative py-[15%] gap-8" id="about">
+      <div
+        className="flex flex-col justify-center items-center w-full relative py-[15%] gap-8"
+        id="about"
+      >
         <motion.div
-          className="absolute -top-[350px] left-[50%] z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-violet-600/20 to-indigo-600/20 blur-3xl"
+          className="absolute z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-violet-600/20 to-indigo-600/20 blur-3xl"
           ref={ref}
           style={{
             top: isInView ? -350 : 0,

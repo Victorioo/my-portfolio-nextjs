@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: "Portfolio Victorio | Frontend Developer",
   description:
     "This is the portfolio of a Junior Developer, Victorio Caccioppoli.",
-    icons: {
-      icon: './../../public/logo.png'
-    }
+  icons: {
+    icon: "./../../public/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta
+        name="google-site-verification"
+        content="M6TJ8z10HXfwYVEvHM9K9DSeIlitXR-ziULk1qCet8M"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );
