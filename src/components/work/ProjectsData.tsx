@@ -1,5 +1,14 @@
 export const data = [
   {
+    name: "Ecommerce",
+    gitHub: "https://github.com/Victorioo/ecommerce",
+    page: "https://ecommerce-nextjs-victorioo.vercel.app/",
+    image: "/ecommerce.png",
+    description:
+      "Ecommerce with WhatsApp checkout, using Google Sheets on DB",
+    stack: ["Next.js", "TailwindCSS", "TypeScript", "GSheets"],
+  },
+  {
     name: "Vim Cosmo Clone",
     gitHub: "https://github.com/Victorioo/INTEGRADOR-JS",
     page: "https://integrador-js-black.vercel.app/",

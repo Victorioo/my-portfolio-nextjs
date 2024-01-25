@@ -24,7 +24,7 @@ export default function Home() {
           <div className="flex flex-col my-4 gap-8 w-3/4 items-center justify-center max-w-[70ch] font-medium text-lg text-gray-400">
             <p className="text-md leading-10">
               A passionate{" "}
-              <span className="text-slate-200 font-semibold">Junior Frontend Developer</span>{" "}
+              <span className="text-slate-200 font-semibold">Frontend Developer</span>{" "}
               with a knack for crafting engaging an
               <span className="text-slate-200 font-semibold">
                 {" "}

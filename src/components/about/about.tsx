@@ -1,6 +1,6 @@
 "use client";
 import { easeInOut, motion, useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 export default function About({ children }: { children: JSX.Element }) {
@@ -33,11 +33,9 @@ export default function About({ children }: { children: JSX.Element }) {
 
   const getContributions = pullGitHubAPI()
     .then((response) => {
-      console.log(response)
       const contributionsData =
         response.data.viewer.contributionsCollection.contributionCalendar
           .totalContributions;
-
       setContributions(contributionsData);
     })
     .catch((e) => {
@@ -54,15 +52,6 @@ export default function About({ children }: { children: JSX.Element }) {
         className="flex flex-col justify-center items-center w-full relative py-[15%] gap-8"
         id="about"
       >
-        <motion.div
-          className="absolute z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-violet-600/20 to-indigo-600/20 blur-3xl"
-          ref={ref}
-          style={{
-            top: isInView ? -350 : 0,
-            left: isInView ? "50%" : "0",
-            transition: "top 2s ease, left 2s ease",
-          }}
-        ></motion.div>
         <Image
           src="/victorio.jpg"
           alt="Profile picture of Victorio Caccioppoli"
@@ -71,7 +60,6 @@ export default function About({ children }: { children: JSX.Element }) {
           height={100}
           unoptimized={true}
         />
-        <h1 className="font-bold text-4xl">About me</h1>
         {children}
         <motion.div
           className="flex flex-col gap-4 items-center"
@@ -83,7 +71,7 @@ export default function About({ children }: { children: JSX.Element }) {
           <img
             src="https://ghchart.rshah.org/Victorioo"
             alt="Chart of contributions"
-            className="bg-zinc-900 p-5 w-[80%] h-60 rounded-xl md:w-60 md:h-60 md:p-0 object-cover shadow-lg shadow-zinc-950"
+            className="border-4 border-gray-500 p-5 w-[80%] h-60 rounded-xl md:w-60 md:h-60 md:p-0 object-cover shadow-lg shadow-zinc-950"
           />
           <motion.a
             href="https://github.com/Victorioo"

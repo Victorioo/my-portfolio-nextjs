@@ -37,13 +37,7 @@ function Hero({ children }: { children: JSX.Element }) {
         FRONTEND DEVELOPER
       </motion.h1>
       <div className="sm:items-start lg:gap-4 lg:flex-col lg:items-start flex items-end justify-between w-full">
-        <motion.p className="sm:text-2xl sm:leading-relaxed text-4xl text-gray-200 leading-relaxed max-w-xl font-medium tracking-tighter">
-          I&apos;m a developer with over 2{" "}
-          <motion.a href="#" className="underline">
-            years experience
-          </motion.a>
-          , based on Córdoba Argentina.
-        </motion.p>
+        {children}
         <motion.h1
           className="lg:text-start lg:max-w-none lg:text-3xl text-7xl font-bold max-w-[10ch] text-end text-gray-300 tracking-tight z-30"
           animate={{ opacity: [0, 1] }}
