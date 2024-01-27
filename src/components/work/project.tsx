@@ -38,7 +38,7 @@ function Project({
               href={page}
               target="_blank"
             >
-              See Web <LuExternalLink />
+              Web <LuExternalLink />
             </a>
           ) : (
             ""

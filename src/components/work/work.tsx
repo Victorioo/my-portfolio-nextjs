@@ -1,28 +1,24 @@
-import { data } from "./ProjectsData";
+import { data } from "./SpanishProjects";
 import React from "react";
 import Project from "./project";
 import Chip from "./Chip";
 import Image from "next/image";
-const IterateStack = (stack?: string[]) => {
-  if (!stack) return;
 
-  return stack.map((tech, key) => {
-    return <Chip text={tech} key={key} />;
-  });
-};
 
-const Work = () => {
+interface Data {
+  name: string,
+  gitHub: string,
+  page: string,
+  image: string,
+  description: string,
+  stack: string[],
+}
+
+const Work = ({children, data} : {children?: JSX.Element, data: Array<Data>}) => {
   return (
     <>
       <div className="md:w-5/6 w-4/5 mx-auto flex flex-col items-start justify-center gap-3" id="works">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold flex items-center">
-          ✨ Projects
-        </span>
-        <h1 className="font-medium text-4xl">Some works that i did</h1>
-        <p className="text-gray-400 mt-3 text-lg max-w-[60ch]">
-          Believing in the power of consistent practice and coding — where every
-          line written is a step towards learn
-        </p>
+        {children}
       </div>
       <article className="sm:grid-cols-1 lg:grid-cols-2 grid grid-cols-3 mx-auto items-stretch max-w-[80%] gap-4 gap-y-8 my-8">
         {data.map((data, key) => {

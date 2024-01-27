@@ -4,7 +4,28 @@ import Image from "next/image";
 import { motion, scroll } from "framer-motion";
 import BurgerButton from "./BurgerButton";
 import Menu from "./Menu";
-function Header() {
+
+import Link from "next/link";
+
+const ChangeLanguage = ({ lang }: { lang: string }) => {
+  if (lang === "es") {
+    return (
+      <>
+        <Link href="/">see on English -{">"}</Link>
+      </>
+    );
+  }
+
+  if (lang === "en") {
+    return (
+      <>
+        <Link href="/es">ver en Español -{">"}</Link>
+      </>
+    );
+  }
+};
+
+function Header({ lang }: { lang: string }) {
   type WeatherData = {
     current: {
       temperature_2m: String;
@@ -122,7 +143,7 @@ function Header() {
         <nav>
           <motion.ul
             layout
-            className={`text-sm uppercase flex items-start gap-14`}
+            className={`text-sm uppercase flex items-center gap-14`}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
             <li className="flex items-center gap-2 md:hidden">
@@ -146,10 +167,17 @@ function Header() {
               </span>
             </li>
             <li className="md:hidden">
-              <a href="mailto:victoriocaccioppoli@gmail.com" className="underline underline-offset-4 lowercase">
+              <a
+                href="mailto:victoriocaccioppoli@gmail.com"
+                className="underline underline-offset-4 lowercase"
+              >
                 victoriocaccioppoli@gmail.com
               </a>
             </li>
+            <li className="flex gap-1">
+              <ChangeLanguage lang={lang}></ChangeLanguage>
+            </li>
+
             <BurgerButton
               menu={menu}
               changeMenu={() => setMenu(!menu)}

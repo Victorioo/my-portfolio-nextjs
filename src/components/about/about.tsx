@@ -53,9 +53,9 @@ export default function About({ children }: { children: JSX.Element }) {
         id="about"
       >
         <Image
-          src="/victorio.jpg"
+          src="/vitorio.png"
           alt="Profile picture of Victorio Caccioppoli"
-          className="w-60 h-60 object-cover rounded-full border-4"
+          className="w-60 h-60 object-center rounded-full border-4"
           width={100}
           height={100}
           unoptimized={true}
