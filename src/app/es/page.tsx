@@ -141,7 +141,7 @@ export default function Home() {
                   className="px-8 py-2 rounded-full text-lg font-semibold shadow-lg focus:scale-105 transition-all spacing tracking-widest border-2"
                   type="submit"
                 >
-                  Send
+                  Enviar
                 </button>
               </form>
               <div className="flex gap-8 list-none underline underline-offset-4">
