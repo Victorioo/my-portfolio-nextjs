@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Gradient from "../gradient";
-
+import Name from './Name'
 // React
 
 function Hero({ children }: { children: JSX.Element }) {
@@ -38,13 +38,14 @@ function Hero({ children }: { children: JSX.Element }) {
       </motion.h1>
       <div className="sm:items-start lg:gap-4 lg:flex-col lg:items-start flex items-end justify-between w-full">
         {children}
-        <motion.h1
+        {/* <motion.h1
           className="lg:text-start lg:max-w-none lg:text-3xl text-7xl font-bold max-w-[10ch] text-end text-gray-300 tracking-tight z-30"
           animate={{ opacity: [0, 1] }}
           transition={{ duration: 2, delay: 0.3 }}
         >
           VICTORIO CACCIOPPOLI
-        </motion.h1>
+        </motion.h1> */}
+        <Name></Name>
       </div>
     </section>
   );
