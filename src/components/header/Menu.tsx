@@ -1,12 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ChangeLanguage } from "./ChangeLanguage";
 function Menu({
   menu,
   month,
-  // children,
-}: {
+  lang,
+}: // children,
+{
   menu: boolean;
   month: string;
+  lang: string;
   // children: JSX.Element;
 }) {
   return (
@@ -21,6 +24,9 @@ function Menu({
         <a href="#works">Works</a>
         <a href="#contact">Contact</a>
       </ul>
+      <button className="uppercase text-lg text-center self-center px-2">
+        <ChangeLanguage lang={lang}></ChangeLanguage>
+      </button>
       <div className="flex flex-col gap-4 list-none items-center">
         <li className="flex items-center justify-center gap-1">
           <div className="bg-green-300 h-2 w-2 rounded-full"></div>

@@ -123,7 +123,7 @@ function Header({ lang }: { lang: string }) {
           height: menu ? "180vh" : "0px",
         }}
       >
-        <Menu menu={menu} month={`${month()} ${year}`}></Menu>
+        <Menu menu={menu} month={`${month()} ${year}`} lang={lang}></Menu>
       </motion.div>
       <motion.header
         className="flex justify-between items-center h-24 px-14 fixed w-full z-40"
@@ -174,7 +174,7 @@ function Header({ lang }: { lang: string }) {
                 victoriocaccioppoli@gmail.com
               </a>
             </li>
-            <li className="flex gap-1">
+            <li className="flex gap-1 md:hidden">
               <ChangeLanguage lang={lang}></ChangeLanguage>
             </li>
 

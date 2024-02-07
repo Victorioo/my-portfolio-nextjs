@@ -33,7 +33,7 @@ const Work = ({children, data} : {children?: JSX.Element, data: Array<Data>}) =>
             >
               <div className="flex flex-col items-center justify-between h-full gap-4">
                 <h1 className="font-semibold text-xl">{name}</h1>
-                <p className="text-gray-400">{description}</p>
+                <p className="text-gray-400 text-center max-w-[35ch]">{description}</p>
                 <div className="flex items-center gap-2">
                   {stack.map((tech, key) => {
                     return <Chip text={tech} key={key}></Chip>;
